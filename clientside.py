@@ -22,5 +22,5 @@ while True:
             server.send(message)
             sys.stdout.write("[You] : ")
             sys.stdout.write(message)
-            sys.stdout..flush()
+            sys.stdout.flush()
 server.close()
