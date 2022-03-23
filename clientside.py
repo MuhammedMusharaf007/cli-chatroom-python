@@ -7,7 +7,7 @@ if len(sys.argv) != 3:
     print("Correct usage: Script, IP Address, Port Number")
     exit()
 IP_address = str(sys.argv[1])
-port = str(sys.argv[2])
+port = int(sys.argv[2])
 server.connect((IP_address, Port))
 
 while True:
