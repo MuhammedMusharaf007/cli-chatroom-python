@@ -9,7 +9,7 @@ if len(sys.argv) != 3:
     print("Enter data as follows : Script, IP Address, Port Number")
     exit()
 IP_address = str(sys.argv[1])
-Port = str(sys.argv[2])
+Port = int(sys.argv[2])
 server.bind((IP_address, Port))
 server.listen(100)
 list_of_clients = []
@@ -22,7 +22,7 @@ def clientthread(conn, addr):
             message = conn.recv(2048)
             if message:
                 print("["+addr[0]+"] : "+message)
-                message_to_send = "["+addr[0]+"] : " message
+                message_to_send = "["+addr[0]+"] : " + message
                 broadcast(message_to_send, conn)
             else:
                 remove(conn)
